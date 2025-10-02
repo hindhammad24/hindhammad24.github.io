@@ -1,0 +1,235 @@
+/*
+  Resources:
+  Again i mostly used IAT 235 class notes and alot of W3Schools CSS: https://www.w3schools.com/css/
+  for General CSS concepts and properties that i forgot 
+  But mainly i used this link for CSS Gradients. https://www.w3schools.com/css/css3_gradients.asp
+  You can see where i used it in the header background gradient.
+  I also saw this CSS Box Shadows on  https://www.w3schools.com/css/css3_shadows.asp
+  Applied to header, projects, and profile pic for cool effects
+  But for the most part i used this toturial for CSS :hover 
+  https://developer.mozilla.org/en-US/docs/Web/CSS/:hover
+*/
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ebe1f7;
+  color: #333;
+  line-height: 1.6;
+  padding: 4vw;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 8vw 4vw;
+  background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+  border-radius: 1.5vw;
+  margin-bottom: 4vw;
+  box-shadow: 0 0.4vw 1vw rgba(0,0,0,0.1);
+}
+
+header h1 {
+  font-size: 5vw;
+  color: #222;
+  margin-bottom: 1vw;
+}
+
+header p {
+  font-size: 2.2vw;
+  color: #444;
+  margin-bottom: 2vw;
+}
+
+header nav a {
+  margin: 0 2vw;
+  text-decoration: none;
+  font-weight: bold;
+  color: #444;
+  transition: color 0.3s ease;
+  font-size: 1.8vw;
+}
+
+header nav a:hover {
+  color: #d63384;
+}
+
+/* Sections */
+section {
+  margin-bottom: 5vw;
+}
+
+h2 {
+  margin-bottom: 1.5vw;
+  color: #d63384;
+  font-size: 4vw;
+  border-bottom: 0.3vw solid #eee;
+  padding-bottom: 0.5vw;
+}
+
+/* About Me */
+.about-me {
+  text-align: center;
+  padding: 8vw 2vw;
+  margin: 5vw auto;
+  max-width: 90%;
+}
+
+.profile-pic {
+  display: block;
+  margin: 2vw auto;
+  width: 30vw;
+  max-width: 250px;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 0.4vw solid #fff;
+  box-shadow: 0 0.4vw 0.8vw rgba(0,0,0,0.1);
+}
+
+.about-me p {
+  text-align: center;
+  font-size: 1.5vw;
+  line-height: 1.6;
+  margin-top: 1.5vw;
+}
+
+/* General section images NOT the profile pic */
+section img {
+  border-radius: 1vw;
+  margin: 1.5vw 0;
+  width: 100%;
+  height: auto;
+}
+
+/* Education + Skills */
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  margin-bottom: 1.5vw;
+  font-size: 1.5vw;
+}
+
+/* Projects Grid */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20vw, 1fr));
+  gap: 2vw;
+}
+
+.projects figure {
+  background: #fff;
+  border-radius: 1.2vw;
+  padding: 1vw;
+  box-shadow: 0 0.4vw 0.8vw rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projects figure:hover {
+  transform: translateY(-0.5vw);
+  box-shadow: 0 0.6vw 1.2vw rgba(0,0,0,0.15);
+}
+
+.projects img {
+  width: 100%;
+  border-radius: 0.8vw;
+}
+
+/* Contact */
+.contact {
+  text-align: center;
+  margin: 5vw auto;
+}
+
+.contact p {
+  display: inline-block;   
+  margin: 0 1.5vw;          
+  font-size: 1.5vw;      
+}
+
+.contact a {
+  color: #0077b5;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+  color: #d63384;
+}
+
+/* Dark mode */
+.dark-mode {
+  background-color: #222;
+  color: #f8f8f8;
+}
+
+.dark-mode header {
+  background: linear-gradient(135deg, #546b9e, #b7699f);
+}
+
+.dark-mode a {
+  color: #ffccff;
+}
+
+/* Habit container and legend */
+.habit-container {
+  display: flex;
+  justify-content: center; 
+  margin-top: 2vw;
+}
+
+#habitMap {
+  background-color: white; 
+  border-radius: 1.2vw;
+  box-shadow: 0 0.4vw 1vw rgba(0,0,0,0.1);
+}
+
+#legend {
+  text-align: center;
+  margin-top: 1.5vw;
+  font-size: 1.5vw; 
+}
+
+#legend span {
+  margin-right: 1.5vw; 
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 8vw;
+  }
+
+  header p, header nav a {
+    font-size: 4vw;
+  }
+
+  h2 {
+    font-size: 6vw;
+  }
+
+  .about-me p, ul li, .contact p {
+    font-size: 3.5vw;
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
+    gap: 4vw;
+  }
+
+  .profile-pic {
+    width: 50vw;
+    border-width: 0.8vw;
+  }
+}

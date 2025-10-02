@@ -1,0 +1,44 @@
+<!-- 
+  Resources used for this page:
+  1. W3Schools HTML5 SVG: https://www.w3schools.com/html/html5_svg.asp
+  2. MDN SVG documentation: https://developer.mozilla.org/en-US/docs/Web/SVG
+  3. StackOverflow flower drawing example: https://stackoverflow.com/questions/46738188/draw-a-flower-using-canvas-and-a-loop
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Visualizations</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="vis.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>My Visualizations</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="visualizations.html" class="active">Visualizations</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Visualization 1: Habit Map -->
+    <section>
+        <h2>My Weekly Habit Map</h2>
+            <div class="habit-container">
+                <svg id="habitMap" width="800" height="350"></svg>
+            </div>
+            <div id="legend"> 
+            </div>
+    </section>
+
+
+    <section>
+        <h2>Blooming Flowers Animation</h2>
+        <svg id="flowerCanvas" width="800" height="400" style="background:white; display:block; margin:0 auto; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.1);"></svg>
+    </section>
+  </main>
+</body>
+</html>
