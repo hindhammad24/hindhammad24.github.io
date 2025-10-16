@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Assignment 3 – Video Game Sales</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite-api@5.6.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-tooltip"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style2.css" />
+
+    <script>
+      // Register Vega + Vega-Lite with vega-lite-api
+      const options = {
+        init: (view) => view.tooltip(new vegaTooltip.Handler().call),
+        view: { renderer: "canvas" },
+      };
+      vl.register(vega, vegaLite, options);
+    </script>
+  </head>
+
+  <body>
+    <main class="container">
+      <header>
+        <h1>Assignment 3 – Video Game Sales Explorations</h1>
+        <p class="tagline">Who wins, when they win, and where they win.</p>
+      </header>
+
+      <!-- =============================================================== -->
+      <!-- Visualization 1: Global Sales by Genre and Platform            -->
+      <!-- =============================================================== -->
+      <section>
+        <h2>Viz 1 – Action Games Carry the Leaderboard in global sales</h2>
+        <p class="subtle">Heatmap shows the Global Sales by Genre × Platform.</p>
+
+        <div id="vis1"></div>
+        <div id="vis1b"></div>
+
+        <div class="notes" id="notes1"></div>
+      </section>
+
+      <!-- =============================================================== -->
+      <!-- Visualization 2: Sales Over Time by Platform and Genre         -->
+      <!-- =============================================================== -->
+      <section>
+        <h2>Viz 2 – Waves of Consoles as Nintendo DS stands out to be most frequent platform </h2>
+        <p class="subtle">I can switch genres to see Sales Over Time by Platform x genre</p>
+
+        <label class="control">
+          Genre:
+          <select id="genreSelect">
+            <option>Action</option>
+            <option>Sports</option>
+            <option>Role-Playing</option>
+            <option>Shooter</option>
+            <option>Misc</option>
+            <option>Adventure</option>
+            <option>Racing</option>
+            <option>Platform</option>
+            <option>Simulation</option>
+            <option>Fighting</option>
+            <option>Strategy</option>
+            <option>Puzzle</option>
+          </select>
+        </label>
+
+        <div id="vis2"></div>
+
+        <div class="notes" id="notes2"></div>
+      </section>
+
+      <!-- =============================================================== -->
+      <!-- Visualization 3: Regional Sales vs. Platform                   -->
+      <!-- =============================================================== -->
+      <section>
+        <h2>Viz 3 – Japan has there own prefrence in platforms where no one is invited</h2>
+        <p class="subtle"> Platforms by Region.</p>
+
+        <div id="vis3a"></div>
+        <div id="vis3b"></div>
+
+        <div class="notes" id="notes3"></div>
+      </section>
+      <!-- =============================================================== -->
+    <!-- Visualization 4: Tell Us a Visual Story                         -->
+    <!-- =============================================================== -->
+    <section>
+      <h2>Viz 4 – “Why does Japan love RPGs?”: JP Sales by Genre Over Time</h2>
+      <p class="subtle">I’m zooming in on Japan to see which genres actually drive the charts there, and when.</p>
+
+      <!-- The chart renders here -->
+      <div id="vis4"></div>
+
+      <!-- Reflection lives here -->
+      <div class="notes" id="notes4"></div>
+    </section>
+
+    </main>
+
+    <script src="vis2.js" type="module"></script>
+  </body>
+</html>
